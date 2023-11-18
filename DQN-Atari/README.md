@@ -27,6 +27,12 @@ The notebook contains simple and straightforward usage of the functions.
 
 - A video function has been added to visualize the result of the agent after training  
 
+#### Results:
+
+With my computer, I was able to train the agent on thousands of episodes with memory size of 15 000. This resulted as far as a mean reward of 14.  
+
+On another computer with enough RAM to hold a memory size of 200 000, I had resulted after about 6000 episodes to a mean reward of 27.  
+
 #### Next:
 
 I'm looking forward to make a model playing Breakout based on a Decision Transformer.
