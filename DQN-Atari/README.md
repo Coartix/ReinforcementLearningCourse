@@ -7,7 +7,8 @@ Hugo Deplagne
 This project is using gym and torch modules to train a Deep Q-Network on the Atari Breakout game.  
 
 You'll find the implementation inside the `torch_DQL.ipynb` notebook.  
-The parameters chosen for the training are the ones from the paper, except for the memory size that had to be reduced to fit in the RAM of my small computer 😞  
+The parameters chosen for the training are the ones from the paper, except for the memory size that had to be reduced to fit in the RAM of my small computer 😞
+Also another preprocess has been done to the images, we use luminance instead of grayscale.    
 
 The training can take many hours to complete depending on your hardware and the number of episodes you want to train on.  
 
@@ -17,7 +18,9 @@ The notebook contains simple and straightforward usage of the functions.
 
 #### What has been done:
 
-- The memory size had to be reduced to fit in the RAM of my small computer  
+- The memory size had to be reduced to fit in the RAM of my small computer, to remediate some of this loss we use uint8 variables inside ReplayBuffer instead of float32. This quantization reduces considerably the memory size. So no scaling (no normalization) is done on the images.  
+
+- Another configuration of AtariPreprocessing has been done in `preprocess.py`, it adds a luminance_obs boolean parameter to use luminance instead of grayscale.
 
 - The training time is very long, even with a GPU  
 
